@@ -1,0 +1,2 @@
+curl -XPUT localhost:9200/authors/author -d '{ "type" : "csv", "csv_file" : { "folder" : “./”, "filename_pattern" : "authors.csv", "poll":"5m", "fields" : ["author_name" ], "first_line_is_header" : "false", "field_separator" : ",", "field_id" : "id", "field_id_include" : "false", "concurrent_requests" : "1", "charset" : "UTF-8" }, "index" : { "index" : "authors", "type" : "typename", "bulk_size" : 100, "bulk_threshold" : 10 } }'
+
